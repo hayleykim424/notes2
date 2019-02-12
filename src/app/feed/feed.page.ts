@@ -23,7 +23,7 @@ export class FeedPage implements OnInit {
     // Schedule delayed notification
     this.localNotifications.schedule({
       text: 'Time to feed your dog!',
-      trigger: {at: new Date(new Date().getTime() + 10)},
+      trigger: {at: new Date(new Date().getTime() + 10)}, //3hours is 10800 but I made it short to get notification asap to show this function works
       led: 'FF0000',
       sound: null
     });
