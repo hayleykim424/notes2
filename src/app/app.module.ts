@@ -17,6 +17,9 @@ import { environment } from '../environments/environment';
 
 import { NoteAddPageModule } from '../app/note-add/note-add.module';
 import { NotesEditPageModule } from '../app/notes-edit/notes-edit.module';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 
 @NgModule({
@@ -38,6 +41,8 @@ import { NotesEditPageModule } from '../app/notes-edit/notes-edit.module';
   providers: [
     StatusBar,
     SplashScreen,
+    YoutubeVideoPlayer,
+    LocalNotifications,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

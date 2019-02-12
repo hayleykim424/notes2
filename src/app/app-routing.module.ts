@@ -28,7 +28,8 @@ const routes: Routes = [
   { path: 'note-add', loadChildren: './note-add/note-add.module#NoteAddPageModule' },
   { path: 'signout', loadChildren: './signout/signout.module#SignoutPageModule' },
   { path: 'notes-edit', loadChildren: './notes-edit/notes-edit.module#NotesEditPageModule' },
-  { path: 'tips', loadChildren: './tips/tips.module#TipsPageModule' }
+  { path: 'tips', loadChildren: './tips/tips.module#TipsPageModule' },
+  { path: 'feed', loadChildren: './feed/feed.module#FeedPageModule' }
 ];
 
 @NgModule({

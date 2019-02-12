@@ -47,12 +47,17 @@ export class AppComponent {
             {
               title: 'Train!',
               url: '/list',
-              icon: 'list'
+              icon: 'school'
             },
             {
-              title: 'Tips',
+              title: 'Tips ',
               url: '/tips',
-              icon: 'happy'
+              icon: 'paw'
+            },
+            {
+              title: 'Feed ',
+              url: '/feed',
+              icon: 'nutrition'
             },
             {
               title: 'Sign Out',

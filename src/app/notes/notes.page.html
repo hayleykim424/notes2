@@ -4,14 +4,14 @@
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
       <ion-title>
-        Notes
+        Notes 🐾
       </ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-content padding>
       <ion-fab vertical="start" horizontal="end" slot="fixed">
-          <ion-fab-button (click)="createNote()">
+          <ion-fab-button class="fabAddNote" (click)="createNote()">
             <ion-icon name="add"></ion-icon>
           </ion-fab-button>
         </ion-fab>
@@ -21,11 +21,11 @@
             <ion-col *ngFor="let note of notes">
               <ion-card (click)="editNote({title: note.title, content: note.content, date:note.date, key:note.key})">
                 <ion-card-header>
-                  <ion-card-title>
+                  <ion-card-title class="noteTitle">
                     {{note.title}}
                   </ion-card-title>
                   <ion-card-subtitle>
-                    {{note.date}}
+                    {{formatDate(note.date)}}
                   </ion-card-subtitle>
                 </ion-card-header>
 
