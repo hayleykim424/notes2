@@ -12,7 +12,7 @@
 <ion-content>
     <ion-list lines="none">
       <ion-list-header>
-        <ion-label>
+        <ion-label class="pageTitle">
           <h1>Sign Up</h1>
         </ion-label>
       </ion-list-header>
@@ -27,12 +27,12 @@
             <ion-label position="stacked">Password</ion-label>
             <ion-input type="password" placeholder="minimum 6 characters" name="password" formControlName="password"></ion-input>
           </ion-item>
-          <ion-button expand="block" class="signup" type="submit" [disabled]="!signUpForm.controls.email.valid || !signUpForm.controls.password.valid">Sign Up</ion-button>
+          <ion-button color="medium" expand="block" class="signup" type="submit" [disabled]="!signUpForm.controls.email.valid || !signUpForm.controls.password.valid">Sign Up</ion-button>
 
       </form>
       
         <ion-item>
-          <p>Already have an account?<a routerLink="/login">Sign In</a></p>
+          <p>Already have an account?<a routerLink="/login"> Sign In</a></p>
         </ion-item>
     </ion-list>
 </ion-content>
