@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,7 @@ export class HomePage implements OnInit{
   constructor( 
     private authService:AuthenticationService,
     private formBuilder:FormBuilder,
+    private router:Router,
     private toaster:ToastController
   )
   {
@@ -40,6 +42,7 @@ export class HomePage implements OnInit{
     .then( (response) => {
       //sign up successful
       this.showToast('signed up successfully!');
+      this.router.navigate(['/notes']);
       console.log(response);
     })
     .catch( (error) => {
