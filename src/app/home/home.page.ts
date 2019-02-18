@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomePage implements OnInit{
 
   constructor( 
     private authService:AuthenticationService,
-    private formBuilder:FormBuilder
+    private formBuilder:FormBuilder,
+    private toaster:ToastController
   )
   {
 
@@ -37,14 +39,26 @@ export class HomePage implements OnInit{
     this.authService.signUp( formData.email, formData.password )
     .then( (response) => {
       //sign up successful
+      this.showToast('signed up successfully!');
       console.log(response);
     })
     .catch( (error) => {
       //sign up failed
+      this.showToast('Error signing up. Please try again!');
       console.log(error);
     });
 
     //console.log(this.email, this.password);
     //this.authService.signUp(this.email, this.password);
+  }
+
+   //show toast
+   async showToast(message:string){
+    const toast = await this.toaster.create({
+      message: message,
+      position: 'bottom',
+      duration: 1000
+    });
+    toast.present();
   }
 }
